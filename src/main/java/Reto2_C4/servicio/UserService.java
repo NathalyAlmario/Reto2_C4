@@ -99,6 +99,8 @@ public class UserService {
         }).orElse(false);
         return aBoolean;
     }
+    
+
    
     public boolean emailExists(String email) {
         return userRepository.emailExists(email);

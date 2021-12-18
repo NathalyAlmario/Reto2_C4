@@ -7,6 +7,7 @@ package Reto2_C4.controlador;
 import Reto2_C4.modelo.User;
 import Reto2_C4.servicio.UserService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -54,6 +55,13 @@ public class UserController {
     public boolean delete(@PathVariable("id") int id) {
         return userService.delete(id);
     }
+    
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public Optional<User> GetById(@PathVariable("id") int id) {
+        return userService.getUser(id);
+    }
+    
     @GetMapping("/{email}/{password}")
     public User authenticateUser(@PathVariable("email") String email, @PathVariable("password") String password) {
         return userService.authenticateUser(email, password);
