@@ -57,7 +57,6 @@ public class UserController {
     }
     
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public Optional<User> GetById(@PathVariable("id") int id) {
         return userService.getUser(id);
     }
