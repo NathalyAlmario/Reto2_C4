@@ -61,7 +61,7 @@ public class OrderController {
         return orderService.delete(id);
     } 
     
-    @GetMapping("/zona{zone}")
+    @GetMapping("/zona/{zone}")
     public List<Order> getOrdersByZone (@PathVariable("zone") String zone){
         return orderService.getOrderByZone(zone);
     }
